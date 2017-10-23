@@ -1,5 +1,5 @@
 if exists('g:vmd_vim_loaded')
-  exit
+  finish
 endif
 
 let g:vmd_vim_loaded = 1
