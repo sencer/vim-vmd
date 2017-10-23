@@ -25,6 +25,10 @@ function! vmd#parseout(jobid, data, event)
       execute '1 delete _'
       call delete(l:file, 'rf')
       execute ':'.l:curline
+    elseif data[:12] == 'Info) Exiting'
+      echom "VMD exiting!"
+      let s:vmd_spawned = 0
+      call jobclose(a:jobid)
     endif
   endfor
   return 0
