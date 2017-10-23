@@ -9,7 +9,7 @@ if !exists('g:vmd_command')
 endif
 
 if !exists('g:vmd_options')
-  let g:vmd_options = [ '-e', '/home/sselcuk/software/vim-vmd/tcl/vim.tcl' ]
+  let g:vmd_options = [ '-e', expand('<sfile>:p:h:h').'/tcl/vim.tcl' ]
 endif
 
 command! VMD :call vmd#loadmol()
