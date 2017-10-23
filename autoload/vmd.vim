@@ -10,7 +10,6 @@ endfunction
 function! vmd#parseout(jobid, data, event)
   for data in a:data
     if data[:4] == 'VIM: '
-      echo data[:4]
       call vmd#deletematches()
       let l:line = search(substitute(join(map(split(data[5:]), 'v:val[:-2]'), '\d*\s\+'), '\.', '\\.', 'g'))
       call add(g:vmd#matches, matchaddpos('SpecialChar', [l:line]))
